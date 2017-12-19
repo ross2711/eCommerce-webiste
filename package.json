@@ -1,0 +1,31 @@
+{
+  "name": "ecommerce",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "history": "^4.7.2",
+    "meteor-node-stubs": "^0.3.2",
+    "nuka-carousel": "^3.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-image-slideshow": "^1.5.4",
+    "react-portal": "^4.0.0",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-slick": "^0.15.4",
+    "react-stripe-checkout": "^2.6.3",
+    "semantic-ui-button": "^2.2.12",
+    "semantic-ui-dropdown": "^2.2.12",
+    "semantic-ui-form": "^2.2.12",
+    "semantic-ui-icon": "^2.2.12",
+    "semantic-ui-react": "^0.77.0",
+    "tween.js": "^16.6.0"
+  },
+  "devDependencies": {
+    "react-addons-perf": "^15.4.2"
+  }
+}

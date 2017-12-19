@@ -1,0 +1,335 @@
+/* CSS declarations go here */
+/*.container {*/
+/*    max-width: 100%;
+    height: 200px;*/
+/*    width: 50vw;*/
+/*width: 100vw;
+    height: 50px;*/
+/*height: 5%;
+width: 5%;*/
+/*    margin: auto;
+    display: block;*/
+
+@font-face {
+    font-family: Reality;
+    src: url(reality_hyper/Reality Hyper Regular.ttf);
+}
+
+#registerContainer {
+  color: #042645 !important: 
+}
+
+#main-img {
+  /*width: 100vw;*/
+  align-self: center;
+  text-align: center;
+/*  height:100%;
+  margin: auto;*/
+  /*display: block;*/
+}
+
+.row-carousel {
+  height: 1300px;
+  width: 100%
+    margin: auto;
+  display: block;
+}
+
+
+.cityDropdown {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+}
+
+#cityDropdown {
+    color: black;
+}
+
+.artistSearch {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+}
+
+.eventBox {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#navText {
+    padding-top: 10px;
+    font-family: Reality;
+    font-size: 70px;
+    color: #042645;
+}
+
+#navTextRegister {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: Reality;
+  font-size: 40px;
+  color: #042645;
+  margin-right: 10px;
+}
+
+#navTextShipping {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: Reality;
+  font-size: 40px;
+  color: #042645;
+  margin-right: 10px;
+}
+
+#navTextCart {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: Reality;
+  font-size: 40px;
+  color: #042645;
+  margin-right: 10px;
+}
+
+#test {
+    display: inline;
+    /*vertical-align: bottom;*/
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+#registerBtn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-family: Reality;
+    background:  #042645;
+}
+
+#eventBtn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-family: Reality;
+    background: #042645;
+}
+
+#headerEvent {
+    padding-top: 40px;
+    font-family: Reality;
+    font-size: 25px;
+    color: #042645;
+    background: #FFF;
+}
+
+#headerCreateNewEvent {
+    height: 70px;
+    font-family: Reality;
+    color: #042645;
+    background: #FFF;
+}
+
+#navCart {
+    background:  #042645;
+}
+
+#dropTrig {
+  margin-top: 9px;
+  font-size: 20px;
+  font-family: Reality;
+}
+
+#dropTrigCreateEvent {
+  margin-top: 9px;
+  font-size: 20px;
+  font-family: Reality;
+
+}
+
+#regForm {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#personalInfo {
+  margin-top: 35px;
+}
+
+#adminRegForm {
+  margin-bottom: 50px;
+}
+
+div#adminAreaForm {
+    background-color: #042645;
+}
+
+div#AdminCreateEventPage {
+    background-color: #042645;
+}
+
+div#adminRegForm {
+    background-color: #042645;
+}
+
+div#adminAreaForm {
+    background-color: #042645;
+}
+
+div#cartAreaForm {
+    background-color: #042645;
+    padding-bottom: 14px;
+}
+
+div#shippingAreaForm {
+    background-color: #042645;
+    padding-bottom: 14px;
+}
+
+
+#newEventPadding {
+  margin-bottom: 14px;
+  background-color: #042645;
+}
+
+#userRegForm {
+  margin-bottom: 50px;
+}
+
+div#userRegForm {
+    background-color: #042645;
+}
+
+#toggleBtn {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    color: grey;
+}
+
+#filterEventContainer {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+#filterSearch {
+  color: #FFF;
+}
+
+#formText {
+  color: grey;
+}
+#regBtn {
+  margin-top: 40px;
+}
+
+#adminRegFormTitle {
+  text-align: center;
+  color: #042645;
+  margin-bottom: 20px;
+}
+
+#userRegFormTitle {
+  text-align: center;
+  color: #042645;
+  margin-bottom: 20px;
+}
+
+#holdingDivForImage {
+  height: 200px;
+  width: 300px;
+  background-color: #459cd8;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+}
+
+#navText {
+  padding-top: 10px;
+  font-family: Reality;
+  font-size: 70px;
+  color: #042645;
+}
+
+#currentEventsText {
+  padding-top: 10px;
+  font-family: Reality;
+  font-size: 40px;
+  color: #042645;
+}
+
+/*#footerBack  {
+  background-color: #459cd8;
+  color: #459cd8;
+}*/
+
+#ticketNumber {
+  float: right;
+  color: red;
+}
+
+#formTextHoldingText {
+/*  padding-left: 10px;
+  padding-right: 10px;*/
+  padding: 15px;
+  color: grey;
+}
+
+#checkoutText {
+  color: grey;
+  font-size: 1.5rem;
+}
+
+.large.text {
+   font-size: 2rem;
+}
+
+#bookerContainer {
+  padding: 30px;
+}
+
+#bookerContainerInfo {
+  padding: 15px 30px 15px 30px;
+  margin-bottom: 20px;
+}
+
+#imgCheckout {
+  width:100%;
+  height:125px;
+}
+
+#imgPaymentOpt {
+  width:100%;
+  height:100%;
+}
+
+#bookerInfoPadding {
+  color: grey;
+  font-size: 1.5rem;
+  padding-top: 50px;
+}
+
+#checkoutEditBtn {
+  float: right;
+}
+
+#eventPad {
+  margin-bottom: 10px;
+}
+
+footer {
+  padding: 0px;
+}
+
+#btnText {
+  text-decoration-color: #FFFFFF !important;
+}
+
+
+
+
+
