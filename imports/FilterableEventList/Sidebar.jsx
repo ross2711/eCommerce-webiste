@@ -70,14 +70,28 @@ export default class SidebarLeftUncover extends React.Component {
 
             <Menu.Item className="location">
               <div id="filterEventContainer">
-                <Icon size="big" className="location arrow" />
-                Location
+                <Icon size="big" className="euro" />
+                Price
               </div>
-              <div className="ui container" id="toggleBtnContainer">
+              <div className="ui container">
                 <div className="ui two column grid">
                   <div className="row">
                     <div className="column centered">
-                      <select
+                      <input
+                        type="range"
+                        min="0"
+                        max="500"
+                        name="min"
+                        placeholder="min"
+                      />
+                      <input
+                        type="range"
+                        min="0"
+                        max="500"
+                        name="max"
+                        placeholder="max"
+                      />
+                      {/*<select
                         name="skills"
                         multiple=""
                         className="ui inverted fluid dropdown"
@@ -89,7 +103,7 @@ export default class SidebarLeftUncover extends React.Component {
                         <option value="aberdeen">Aberdeen</option>
                         <option value="inverness">Inverness</option>
                         <option value="perth">Perth</option>
-                      </select>
+                      </select>*/}
                     </div>
                   </div>
                 </div>
@@ -147,3 +161,87 @@ export default class SidebarLeftUncover extends React.Component {
     );
   }
 }
+
+// <Menu.Item className="location">
+//               <div id="filterEventContainer">
+//                 <Icon size="big" className="location arrow" />
+//                 Location
+//               </div>
+//               <div className="ui container" id="toggleBtnContainer">
+//                 <div className="ui two column grid">
+//                   <div className="row">
+//                     <div className="column centered">
+//                       <input
+//                         type="range"
+//                         min="0"
+//                         max="500"
+//                         name="min"
+//                         placeholder="min"
+//                       />
+//                       <input
+//                         type="range"
+//                         min="0"
+//                         max="500"
+//                         name="max"
+//                         placeholder="max"
+//                       />
+//                       {/*<select
+//                         name="skills"
+//                         multiple=""
+//                         className="ui inverted fluid dropdown"
+//                         id="cityDropdown"
+//                       >
+//                         <option value="">Select city</option>
+//                         <option value="glasgow">Glasgow</option>
+//                         <option value="edinburgh">Edinburgh</option>
+//                         <option value="aberdeen">Aberdeen</option>
+//                         <option value="inverness">Inverness</option>
+//                         <option value="perth">Perth</option>
+//                       </select>*/}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </Menu.Item>
+
+// <Menu.Item className="location">
+//               <div id="filterEventContainer">
+//                 <Icon size="big" className="location arrow" />
+//                 Location
+//               </div>
+//               <div className="ui container" id="toggleBtnContainer">
+//                 <div className="ui two column grid">
+//                   <div className="row">
+//                     <div className="column centered">
+//                       <input
+//                         type="range"
+//                         min="0"
+//                         max="500"
+//                         name="min"
+//                         placeholder="min"
+//                       />
+//                       <input
+//                         type="range"
+//                         min="0"
+//                         max="500"
+//                         name="max"
+//                         placeholder="max"
+//                       />
+//                       {/*<select
+//                         name="skills"
+//                         multiple=""
+//                         className="ui inverted fluid dropdown"
+//                         id="cityDropdown"
+//                       >
+//                         <option value="">Select city</option>
+//                         <option value="glasgow">Glasgow</option>
+//                         <option value="edinburgh">Edinburgh</option>
+//                         <option value="aberdeen">Aberdeen</option>
+//                         <option value="inverness">Inverness</option>
+//                         <option value="perth">Perth</option>
+//                       </select>*/}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </Menu.Item>

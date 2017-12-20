@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
 	Button,
 	Form,
@@ -17,6 +17,7 @@ import Terms from "./FastPayCheckoutFormComponents/Terms";
 import SubmitBtn from "./FastPayCheckoutFormComponents/SubmitBtn";
 import { Cart } from "/imports/api/Cart";
 import { Events } from "../api/events";
+import history from "../History";
 
 export default class CheckoutForm extends React.Component {
 	constructor(props) {
@@ -73,14 +74,12 @@ export default class CheckoutForm extends React.Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		debugger;
-		// var purchaser = {
-		// 	firstName: this.state.firstName
-		// };
-		var cart = Cart.find({}).fetch()[0];
-		debugger;
-		Cart.update({ _id: cart._id }, { $set: { buyer: this.state.buyer } });
-		debugger;
-		// Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
+		// var cart = Cart.find({}).fetch()[0];
+		// debugger;
+		// Cart.update({ _id: cart._id }, { $set: { buyer: this.state.buyer } });
+		// debugger;
+		Session.set("buyer", this.state.buyer);
+		history.push("/confirmation");
 	}
 
 	// handleSubmit(event) {

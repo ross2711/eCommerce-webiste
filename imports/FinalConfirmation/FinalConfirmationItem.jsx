@@ -2,17 +2,34 @@ import React from "react";
 // import { Radio } from 'semantic-ui-react'
 import { Button } from "semantic-ui-react";
 import Checkout from "./Checkout";
+import { Session } from "meteor/session";
 import { Router, Route, IndexRoute, browserHistory } from "react-router-dom";
-import { Cart } from "../api/Cart";
+import { Cart, buildCartItems } from "../api/Cart";
+import { Events } from "../api/events";
 
 export default class CartItem extends React.Component {
   // var total = this.props.price * this.props.quantity;
   constructor() {
     super();
     this.state = {
-      data: ""
-      // display: "none"
+      buyer: null,
+      total: 0
     };
+  }
+
+  componentWillMount() {
+    Tracker.autorun(() => {
+      const eventCursor = Events.find();
+      if (eventCursor.count() < 1) {
+        return;
+      }
+      const { total } = buildCartItems();
+
+      console.log("total", total);
+      this.setState({ total });
+    });
+    const buyer = Session.get("buyer");
+    this.setState({ buyer });
   }
 
   render() {
@@ -71,28 +88,32 @@ export default class CartItem extends React.Component {
 
                 <div className="row">
                   <h2 id="formText" className="ui two wide column">
-                    {this.props.firstName} {this.props.lastName}
+                    {this.state.buyer.firstName} {this.state.buyer.lastName}
                   </h2>
                   <h2 id="formText" className="ui four wide column">
-                    {this.props.number} {this.props.address} {this.props.city}
+                    {this.state.buyer.number} {this.state.buyer.address}{" "}
+                    {this.state.buyer.city}
                   </h2>
 
                   <h2 id="formText" className="ui three wide column">
-                    {this.props.email}
+                    {this.state.buyer.email}
                   </h2>
 
                   <h2 id="formText" className="ui three wide column">
-                    {this.props.telephone}
+                    {this.state.buyer.telephone}
                   </h2>
                   <h2 id="formText" className="ui two wide column">
-                    € 200
+                    € {this.state.total}
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                 </div>
 
                 <div className="row">
                   <div id="checkoutEditBtn">
-                    <Checkout email={this.props.email} amount={20000} />
+                    <Checkout
+                      email={this.state.buyer.email}
+                      amount={this.state.total * 100}
+                    />
                     {/*<Button className="ui orange button" type="submit">
                       Edit Ticket Info
                     </Button>*/}
@@ -118,7 +139,7 @@ export default class CartItem extends React.Component {
 
 // getId(id) {
 //   debugger;
-//   this.props.removeEvent(id);
+//   this.state.buyer.removeEvent(id);
 // }
 
 // setEvent() {
