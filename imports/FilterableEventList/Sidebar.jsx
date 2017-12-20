@@ -16,12 +16,32 @@ import EventList from "./EventList";
 import HeaderEvent from "./Header";
 
 export default class SidebarLeftUncover extends React.Component {
-  state = { visible: false };
+  state = {
+    visible: false,
+    genre_filter: ["pop", "rock", "classical", "electronic"]
+    // location: null
+  };
 
   toggleVisibility = () => this.setState({ visible: !this.state.visible });
+  toggleGenres = (genre, checked) => {
+    let new_genres;
+    if (checked) {
+      new_genres = [...this.state.genre_filter, genre];
+    } else {
+      new_genres = this.state.genre_filter.filter(g => g !== genre);
+    }
+    this.setState({ genre_filter: new_genres });
+  };
 
   render() {
     const { visible } = this.state;
+    const events_to_render = this.props.events.filter(event =>
+      this.state.genre_filter.includes(event.genre)
+    );
+    // .filter(event => {
+    //   if (!this.state.location) return true;
+    //   return this.state.location === event.location;
+    // });
     return (
       <div>
         <HeaderEvent />
@@ -41,7 +61,10 @@ export default class SidebarLeftUncover extends React.Component {
                 Music
               </div>
               <div className="">
-                <Genre />
+                <Genre
+                  selected={this.state.genre_filter}
+                  toggle={this.toggleGenres}
+                />
               </div>
             </Menu.Item>
 
@@ -111,7 +134,7 @@ export default class SidebarLeftUncover extends React.Component {
               <Item.Group divided>
                 <Menu.Item>
                   <EventList
-                    events={this.props.events}
+                    events={events_to_render}
                     history={this.props.history}
                     addToCart={this.props.addToCart}
                   />

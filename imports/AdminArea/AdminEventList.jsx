@@ -3,7 +3,6 @@ import AdminEventItem from "./AdminEventItem";
 
 export default class AdminEventList extends React.Component {
 	render() {
-		debugger;
 		return (
 			<div>
 				{this.props.events.map((ele, i) => {
@@ -16,6 +15,7 @@ export default class AdminEventList extends React.Component {
 							artist={ele.artist}
 							tickets={ele.tickets}
 							price={ele.price}
+							genre={ele.genre}
 							startDate={ele.startDate}
 							startTime={ele.startTime}
 							finishDate={ele.finishDate}

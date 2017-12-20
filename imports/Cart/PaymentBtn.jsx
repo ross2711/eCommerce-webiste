@@ -28,12 +28,14 @@ export default class PaymentBtn extends React.Component {
 				</div>
 				<div className="eight wide center aligned column">
 					<div>
-						<button
-							className="ui large fluid green button"
-							type="submit"
-						>
-							Make Payment
-						</button>
+						<Link to={"/checkout/option"}>
+							<button
+								className="ui large fluid green button"
+								type="submit"
+							>
+								Make Payment
+							</button>
+						</Link>
 					</div>
 				</div>
 				<div className="four wide center aligned column" id="dropTrig">

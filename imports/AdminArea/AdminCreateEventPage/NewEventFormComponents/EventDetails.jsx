@@ -1,14 +1,23 @@
 import React from "react";
-import DropdownGenre from "../../DropdownGenre";
+// import DropdownGenre from "../../DropdownGenre";
 import DropdownType from "../../DropdownType";
+import { Dropdown } from "semantic-ui-react";
 
 export default class EventDetails extends React.Component {
+  constructor(props) {
+    debugger;
+    super(props);
+    this.state = {
+      genre: null
+    };
+  }
   getData(e) {
     var artist = this.refs.artist.value.trim();
     var price = Number(this.refs.price.value.trim());
     var tickets = Number(this.refs.tickets.value.trim());
+    var gen = this.state.genre;
     debugger;
-    this.props.passEventDetails(artist, price, tickets);
+    this.props.passEventDetails(artist, price, tickets, gen);
   }
 
   render() {
@@ -17,7 +26,28 @@ export default class EventDetails extends React.Component {
         <div className="five fields">
           <div className="field">
             <label id="formText">Genre</label>
-            <DropdownGenre />
+            <Dropdown
+              selection
+              fluid
+              options={[
+                {
+                  text: "rock",
+                  value: "rock"
+                },
+                {
+                  text: "pop",
+                  value: "pop"
+                },
+                {
+                  text: "electronic",
+                  value: "electronic"
+                }
+              ]}
+              onChange={(e, { value }) => {
+                this.setState({ genre: value });
+              }}
+            />
+            {/*<DropdownGenre />*/}
             {/*passEventDetails={this.passEventDetails.bind(this)}*/}
           </div>
           <div className="field">

@@ -81,7 +81,7 @@ export default class Checkout extends React.Component {
               <div className="row">
                 <div className="ui sixteen wide column centered">
                   <div>
-                    <Link to="/checkout/pay">
+                    <Link to="/fastpay">
                       <button
                         className="ui large fluid yellow button"
                         type="submit"
@@ -106,7 +106,7 @@ export default class Checkout extends React.Component {
               <div className="row">
                 <div className="ui sixteen wide column centered">
                   <div>
-                    <Link to="/checkout/pay">
+                    <Link to="/fastpay">
                       <button
                         className="ui large fluid yellow button"
                         type="submit"

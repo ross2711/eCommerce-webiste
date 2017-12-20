@@ -41,7 +41,7 @@ export default class EventItem extends React.Component {
                 {this.props.city}
               </Item.Description>
               <Item.Meta>
-                <span className="cinema">Genre:</span>
+                <span className="cinema">Genre: {this.props.genre}</span>
               </Item.Meta>
               <Item.Meta>
                 <span className="cinema">

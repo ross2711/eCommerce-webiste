@@ -9,18 +9,13 @@ export default class Genre extends React.Component {
 					<div className="row">
 						<div className="column" />
 						<div className="column">
-							<Radio toggle />
-						</div>
-						<div className="column">
-							<label>All</label>
-						</div>
-						<div className="column" />
-					</div>
-
-					<div className="row">
-						<div className="column" />
-						<div className="column">
-							<Radio toggle />
+							<Radio
+								toggle
+								checked={this.props.selected.includes("rock")}
+								onChange={(e, d) =>
+									this.props.toggle("rock", d.checked)
+								}
+							/>
 						</div>
 						<div className="column">
 							<label>Rock</label>
@@ -31,7 +26,13 @@ export default class Genre extends React.Component {
 					<div className="row">
 						<div className="column" />
 						<div className="column">
-							<Radio toggle />
+							<Radio
+								toggle
+								checked={this.props.selected.includes("pop")}
+								onChange={(e, d) =>
+									this.props.toggle("pop", d.checked)
+								}
+							/>
 						</div>
 						<div className="column">
 							<label>Pop</label>
@@ -42,7 +43,15 @@ export default class Genre extends React.Component {
 					<div className="row">
 						<div className="column" />
 						<div className="column">
-							<Radio toggle />
+							<Radio
+								toggle
+								checked={this.props.selected.includes(
+									"electronic"
+								)}
+								onChange={(e, d) =>
+									this.props.toggle("electronic", d.checked)
+								}
+							/>
 						</div>
 						<div className="column">
 							<label>Electronic</label>
@@ -53,7 +62,15 @@ export default class Genre extends React.Component {
 					<div className="row">
 						<div className="column" />
 						<div className="column">
-							<Radio toggle />
+							<Radio
+								toggle
+								checked={this.props.selected.includes(
+									"classical"
+								)}
+								onChange={(e, d) =>
+									this.props.toggle("classical", d.checked)
+								}
+							/>
 						</div>
 						<div className="column">
 							<label>Classical</label>

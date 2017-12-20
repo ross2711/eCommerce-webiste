@@ -33,7 +33,7 @@ export default class FilterableEventList extends Component {
 		//if it is only update
 		//else insert
 		if (!item) {
-			Cart.insert({ event: id, quantity: 1 }, e => {
+			Cart.insert({ event: id, quantity: 1, buyer: "" }, e => {
 				console.log("****error*****", e);
 			});
 		} else {

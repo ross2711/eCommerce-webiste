@@ -16,11 +16,12 @@ import ShippingForm from "./Shipping/index";
 import Cart from "./Cart/index";
 // import Checkout from "./Checkout/index";
 import CheckoutOption from "./CheckoutOption/index";
-// import FastPayCheckout from "./Checkout/index";
+import FastPayCheckout from "./Checkout/index";
+import FinalConfirmation from "./FinalConfirmation/index";
 import Modal from "./AdminArea/EditEventTitleModal";
 import Perf from "react-addons-perf";
 
-window.perf = Perf;
+// window.perf = Perf;
 
 export const routes = () => (
 	<Router history={history}>
@@ -41,10 +42,8 @@ export const routes = () => (
 			<Route path="/cart" component={Cart} />
 			{/*<Route path="/checkout" component={Checkout} />*/}
 			<Route path="/checkout/option" component={CheckoutOption} />
-			{/*<Route
-				path="/checkout/option/fastpay"
-				component={FastPayCheckout}
-			/>*/}
+			<Route path="/fastpay" component={FastPayCheckout} />
+			<Route path="/confirmation" component={FinalConfirmation} />
 			<Route path="/EditEventTitleModal" component={Modal} />
 		</div>
 	</Router>

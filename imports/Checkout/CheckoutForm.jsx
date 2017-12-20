@@ -1,193 +1,161 @@
-// import React from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
-// import {
-//   Button,
-//   Form,
-//   Icon,
-//   Message,
-//   Dropdown,
-//   Component
-// } from "semantic-ui-react";
+import {
+	Button,
+	Form,
+	Icon,
+	Message,
+	Dropdown,
+	Component
+} from "semantic-ui-react";
 
-// import EventTitle from "./NewEventFormComponents/EventTitle";
-// import EventDetails from "./NewEventFormComponents/EventDetails";
-// import EventInfo from "./NewEventFormComponents/EventInfo";
-// import VenueName from "./NewEventFormComponents/VenueName";
-// import EventImage from "./NewEventFormComponents/EventImage";
-// import Address from "./NewEventFormComponents/Address";
-// import Organiser from "./NewEventFormComponents/Organiser";
-// import ContactInfo from "./NewEventFormComponents/ContactInfo";
-// import Description from "./NewEventFormComponents/Description";
-// import Terms from "./NewEventFormComponents/Terms";
-// import SubmitBtn from "./NewEventFormComponents/SubmitBtn";
-// import { Cart } from "/imports/api/Cart";
+import Address from "./FastPayCheckoutFormComponents/Address";
+import Buyer from "./FastPayCheckoutFormComponents/Buyer";
+import ContactInfo from "./FastPayCheckoutFormComponents/ContactInfo";
+import Description from "./FastPayCheckoutFormComponents/Description";
+import Terms from "./FastPayCheckoutFormComponents/Terms";
+import SubmitBtn from "./FastPayCheckoutFormComponents/SubmitBtn";
+import { Cart } from "/imports/api/Cart";
+import { Events } from "../api/events";
 
-// export default class CheckoutForm extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       // signed_up: false,
-//       // signup_error: null,
-//       event: {
-//         title: "",
-//         artist: "",
-//         price: "",
-//         tickets: "",
-//         startDate: "",
-//         startTime: "",
-//         finishDate: "",
-//         finishTime: "",
-//         venueName: "",
-//         number: "",
-//         address: "",
-//         city: "",
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         telephone: "",
-//         description: "",
-//         image: "",
-//         admin: ""
-//       }
-//     };
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//     // this.getData = this.getData.bind(this);
-//   }
+export default class CheckoutForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			buyer: {
+				firstName: "",
+				lastName: "",
+				email: "",
+				telephone: "",
+				number: "",
+				address: "",
+				city: ""
+			}
+		};
+		// this.handleSubmit = this.handleSubmit.bind(this);
+		// this.getData = this.getData.bind(this);
+	}
 
-//   setEventData(key, value) {
-//     const newEvent = { ...this.state.event, [key]: value };
-//     this.setState({ event: newEvent });
-//   }
+	// setEventData(key, value) {
+	// 	const newBuyer = { ...this.state.buyer, [key]: value };
+	// 	this.setState({ buyer: newBuyer });
+	// }
 
-//   passEventDetails(artist, price, tickets) {
-//     const newEvent = { ...this.state.event, artist, price, tickets };
-//     this.setState({ event: newEvent });
-//   }
+	passBuyer(firstName, lastName) {
+		debugger;
+		const newBuyer = { ...this.state.buyer, firstName, lastName };
+		this.setState({ buyer: newBuyer });
+	}
 
-//   passEventInfo(startDate, startTime, finishDate, finishTime) {
-//     const newEvent = {
-//       ...this.state.event,
-//       startDate,
-//       startTime,
-//       finishDate,
-//       finishTime
-//     };
-//     this.setState({ event: newEvent });
-//   }
+	passContactInfo(email, telephone) {
+		const newBuyer = { ...this.state.buyer, email, telephone };
+		this.setState({ buyer: newBuyer });
+	}
 
-//   passAddressData(number, address, city) {
-//     const newEvent = { ...this.state.event, number, address, city };
-//     this.setState({ event: newEvent });
-//   }
+	passAddressData(number, address, city) {
+		const newBuyer = { ...this.state.buyer, number, address, city };
+		this.setState({ buyer: newBuyer });
+	}
 
-//   passOrganiser(firstName, lastName) {
-//     const newEvent = { ...this.state.event, firstName, lastName };
-//     this.setState({ event: newEvent });
-//   }
+	// this.props.passData(number, address, city);
+	// createEvent(e) {
+	//   e.preventDefault();
 
-//   passContactInfo(email, telephone) {
-//     const newEvent = { ...this.state.event, email, telephone };
-//     this.setState({ event: newEvent });
-//   }
+	//   const event = this.state;
+	//   debugger;
+	//   // const event = { title: "first event", on: new Date() };
+	//   Meteor.call("eventCreate", event, (err, eventId) => {
+	//     if (!err) console.log("new event was created with _id", eventId);
+	//     debugger;
+	//   });
+	// }
 
-//   passEventImage(image) {
-//     this.setState({ image });
-//   }
+	handleSubmit(event) {
+		event.preventDefault();
+		debugger;
+		// var purchaser = {
+		// 	firstName: this.state.firstName
+		// };
+		var cart = Cart.find({}).fetch()[0];
+		debugger;
+		Cart.update({ _id: cart._id }, { $set: { buyer: this.state.buyer } });
+		debugger;
+		// Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
+	}
 
-//   // this.props.passData(number, address, city);
-//   // createEvent(e) {
-//   //   e.preventDefault();
+	// handleSubmit(event) {
+	// 	event.preventDefault();
+	// 	debugger;
+	// 	var purchaser = {
+	// 		firstName: this.state.firstName
+	// 	};
+	// 	var cart = Cart.find({}).fetch()[0];
+	// 	debugger;
+	// 	Cart.update({ _id: cart._id }, { $set: { buyer: purchaser } });
+	// }
 
-//   //   const event = this.state;
-//   //   debugger;
-//   //   // const event = { title: "first event", on: new Date() };
-//   //   Meteor.call("eventCreate", event, (err, eventId) => {
-//   //     if (!err) console.log("new event was created with _id", eventId);
-//   //     debugger;
-//   //   });
-//   // }
+	render() {
+		return (
+			<div className="ui container" id="regForm">
+				<Message
+					id="adminRegFormTitle"
+					attached
+					header="Welcome to Ticead Alba Fast Pay Checkout"
+					content="To process your payment as soon as possible, please fill in your details below"
+				/>
 
-//   render() {
-//     return (
-//       <div className="ui container" id="regForm">
-//         <Message
-//           id="adminRegFormTitle"
-//           attached
-//           header="Welcome to Ticead Alba New Event Form"
-//           content="To get started fill out the details of the event below"
-//         />
+				<form
+					onSubmit={this.handleSubmit.bind(this)}
+					className="ui huge form"
+					id="personalInfo"
+				>
+					<h3 id="formText" className="ui inverted dividing header">
+						Your Details
+					</h3>
 
-//         <form className="ui huge form" id="personalInfo">
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Event Title
-//           </h3>
-//           <EventTitle passEventTitle={this.setEventData.bind(this, "title")} />
+					<Buyer passBuyer={this.passBuyer.bind(this)} />
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Event Details
-//           </h3>
-//           <EventDetails passEventDetails={this.passEventDetails.bind(this)} />
+					<h3 id="formText" className="ui inverted dividing header">
+						Contact Info
+					</h3>
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Event Info
-//           </h3>
-//           <EventInfo passEventInfo={this.passEventInfo.bind(this)} />
+					<ContactInfo
+						passContactInfo={this.passContactInfo.bind(this)}
+					/>
 
-//           <label id="formText">Venue Name</label>
-//           <VenueName
-//             passVenueName={this.setEventData.bind(this, "venueName")}
-//           />
+					<h3 id="formText" className="ui inverted dividing header">
+						Address
+					</h3>
+					<label id="formText">Address</label>
+					<Address
+						passAddressData={this.passAddressData.bind(this)}
+					/>
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Event Image
-//           </h3>
-//           <EventImage passEventImage={this.passEventImage.bind(this)} />
+					{/*<h3 id="formText" className="ui inverted dividing header">
+						Additional details
+					</h3>
+					<Description
+						passDescription={this.setEventData.bind(
+							this,
+							"description"
+						)}
+					/>*/}
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Location
-//           </h3>
-//           <label id="formText">Address</label>
-//           <Address passAddressData={this.passAddressData.bind(this)} />
+					<h3 id="formText" className="ui inverted dividing header" />
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Organiser
-//           </h3>
+					<div className="field">
+						<div className="field">
+							{/*<Terms />*/}
 
-//           <Organiser passOrganiser={this.passOrganiser.bind(this)} />
+							<Button primary floated="right">
+								press
+							</Button>
+						</div>
+					</div>
+				</form>
+			</div>
+		);
+	}
+}
 
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Contact Info
-//           </h3>
-//           <ContactInfo passContactInfo={this.passContactInfo.bind(this)} />
-
-//           <h3 id="formText" className="ui inverted dividing header">
-//             Description of event
-//           </h3>
-//           <Description
-//             passDescription={this.setEventData.bind(this, "description")}
-//           />
-
-//           <h3 id="formText" className="ui inverted dividing header" />
-
-//           <div className="field">
-//             <div className="field">
-//               <Terms />
-//               {/*             <Link to="/admin/area">
-//                 <button onClick={this.handleSubmit.bind(this)}>press</button>
-//               </Link>*/}
-//               {/*<SubmitBtn />*/}
-
-//               <Button
-//                 primary
-//                 floated="right"
-//                 onClick={this.handleSubmit.bind(this)}
-//               >
-//                 press
-//               </Button>
-//             </div>
-//           </div>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
+// onClick={this.handleSubmit.bind(this)}

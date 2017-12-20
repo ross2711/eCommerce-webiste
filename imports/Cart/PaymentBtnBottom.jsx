@@ -13,7 +13,7 @@ export default class PaymentBtnBottom extends React.Component {
 				</div>
 				<div className="eight wide center aligned column">
 					<div>
-						<Link to={"/checkout"}>
+						<Link to={"/checkout/option"}>
 							<button
 								className="ui large fluid green button"
 								type="submit"

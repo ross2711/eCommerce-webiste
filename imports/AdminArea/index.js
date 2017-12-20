@@ -19,6 +19,7 @@ export default class AdminPage extends React.Component {
     Tracker.autorun(() => {
       var admin = Meteor.userId();
       var events = Events.find({ admin: admin }).fetch();
+      var eventsAll = Events.find({}).fetch();
       this.setState({ events });
       debugger;
     });

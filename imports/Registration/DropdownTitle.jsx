@@ -1,16 +1,25 @@
-import React from 'react'
-import { Dropdown } from 'semantic-ui-react'
+import React from "react";
+import { Dropdown } from "semantic-ui-react";
 // import titleOptions from './titleOptions'
 
 const titleOptions = [
-  { key: 'mr', text: 'Mr', value: 'mr' },
-  { key: 'mrs', text: 'Mrs', value: 'mrs' },
-  { key: 'miss', text: 'Miss', value: 'miss' },
-]
+	{ key: "mr", text: "Mr", value: "mr" },
+	{ key: "mrs", text: "Mrs", value: "mrs" },
+	{ key: "miss", text: "Miss", value: "miss" }
+];
 
 const DropdownTitle = () => (
-  <Dropdown placeholder='Title' fluid search selection options={titleOptions} />
-  {/*<Dropdown options={} onChange={props.passTitle} />*/}
-)
+	<Dropdown
+		placeholder="Title"
+		fluid
+		search
+		selection
+		options={titleOptions}
+	/>
+);
 
-export default DropdownTitle
+export default DropdownTitle;
+
+{
+	/*<Dropdown options={} onChange={props.passTitle} />*/
+}

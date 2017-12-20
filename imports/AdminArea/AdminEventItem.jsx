@@ -60,7 +60,7 @@ export default class AdminEventItem extends React.Component {
                 <span className="cinema">Artist: {this.props.artist}</span>
               </Item.Meta>
               <Item.Meta>
-                <span className="cinema">Genre: </span>
+                <span className="cinema">Genre: {this.props.genre}</span>
               </Item.Meta>
               <Item.Meta>
                 <span className="cinema">Type: </span>

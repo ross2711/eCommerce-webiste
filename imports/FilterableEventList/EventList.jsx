@@ -3,11 +3,9 @@ import EventItem from "./EventItem";
 
 export default class EventList extends React.Component {
 	render() {
-		debugger;
 		return (
 			<div>
 				{this.props.events.map((ele, i) => {
-					debugger;
 					return (
 						<EventItem
 							key={i}
@@ -15,6 +13,7 @@ export default class EventList extends React.Component {
 							image={ele.image}
 							title={ele.title}
 							artist={ele.artist}
+							genre={ele.genre}
 							startDate={ele.startDate}
 							startTime={ele.startTime}
 							finishDate={ele.finishDate}

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import LoginLogout from './DropdownNav'
 
-export default class NavbarShipping extends React.Component {
+export default class NavbarCart extends React.Component {
   render() {
     return (
       <div className="ui container navContainer">

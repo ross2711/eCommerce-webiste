@@ -47,6 +47,7 @@ export default class NewEventForm extends React.Component {
         telephone: "",
         description: "",
         image: "",
+        genre: "",
         admin: ""
       }
     };
@@ -59,8 +60,9 @@ export default class NewEventForm extends React.Component {
     this.setState({ event: newEvent });
   }
 
-  passEventDetails(artist, price, tickets) {
-    const newEvent = { ...this.state.event, artist, price, tickets };
+  passEventDetails(artist, price, tickets, genre) {
+    debugger;
+    const newEvent = { ...this.state.event, artist, price, tickets, genre };
     this.setState({ event: newEvent });
   }
 
@@ -119,6 +121,7 @@ export default class NewEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger;
     Meteor.call("eventCreate", this.state.event, (err, eventId) => {
       if (!err) {
         const createdEvent = { ...this.state.event, _id: eventId };

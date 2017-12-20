@@ -29,11 +29,14 @@ const buildCartItems = () => {
 
 export default class ShoppingCart extends React.Component {
   constructor() {
+    debugger;
     super();
     this.state = { events: [] };
   }
   componentWillMount() {
     const cartCursor = Cart.find();
+    this.getTotal();
+    // this.getEventPrice();
 
     // cartCursor.observeChanges({
     //   removed: () => {
@@ -66,6 +69,47 @@ export default class ShoppingCart extends React.Component {
 
   removeEvent(eventId) {
     Cart.remove({ event: eventId }, e => console.log("here", e, "id", id));
+  }
+
+  getTotal() {
+    var cart = Cart.find({}).fetch();
+    var total = 0;
+    cart.map(ele => {
+      var event = Events.findOne({ _id: ele.event });
+
+      var quantity = ele.quantity;
+      debugger;
+      if (event) {
+        var eventTotal = event.price * quantity;
+        total += eventTotal;
+      }
+    });
+
+    debugger;
+
+    // var event = Events.findOne({ _id: cart.event });
+    // debugger;
+    // console.log(cart);
+    // console.log(event);
+
+    // var x = event.price;
+
+    // return event.map(item => {
+    //   debugger;
+    //   var price = Events.findOne({ price: item.price });
+    //   // event.quantity = item.quantity;
+    //   if (event) {
+    //     event.quantity = item.quantity;
+    //   }
+
+    //   return event;
+    // });
+
+    // var x = cart.event;
+    // genre = Events.findOne({_id:id}).genre
+    debugger;
+    // calculate the total here
+    // then set the state
   }
 
   render() {

@@ -22,3 +22,4 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 jeffm:local-persist
 accounts-password
 lepozepo:cloudinary
+mrgalaxy:stripe

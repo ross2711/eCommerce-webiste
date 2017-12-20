@@ -17,6 +17,7 @@ Meteor.methods({
     */
 		// returns a string _id from the db
 		check(this.userId, String);
+		console.log("*****************event data", eventData);
 		return Events.insert({ ...eventData, admin: this.userId });
 	},
 	eventUpdate(eventData) {

@@ -1,6 +1,7 @@
 import React from "react";
 // import { Radio } from 'semantic-ui-react'
 import { Button } from "semantic-ui-react";
+import Checkout from "./Checkout";
 import { Router, Route, IndexRoute, browserHistory } from "react-router-dom";
 import { Cart } from "../api/Cart";
 
@@ -14,38 +15,18 @@ export default class CartItem extends React.Component {
     };
   }
 
-  getId(id) {
-    debugger;
-    this.props.removeEvent(id);
-  }
-
-  setEvent() {
-    this.props.updateEvent(this.props.id, this.state.data);
-  }
-
-  increaseQty() {
-    Cart.update({ event: this.props.id }, { $inc: { quantity: 1 } });
-  }
-
-  decreaseQty() {
-    if (this.props.quantity > 1)
-      Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
-  }
-
-  // redirect() {
-  //   this.props.history.push({
-  //     pathname: "/admin/edit/event",
-  //     query: { id: this.props.id }
-  //   });
-  // }
-
   render() {
     return (
       <div>
         <div className="ui internally celled grid" id="bookerContainerInfo">
           <div className="row" id="eventPad">
             <div className="two wide centered column">
-              <img id="imgCheckout" src={this.props.image} />
+              <img
+                id="imgCheckout"
+                src={
+                  "http://res.cloudinary.com/db8xttzan/image/upload/v1513019646/profile-icon_q3pcew.png"
+                }
+              />
             </div>
 
             <div className="fourteen wide column">
@@ -56,35 +37,28 @@ export default class CartItem extends React.Component {
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    Event Name
+                    Full Name
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    Venue
+                    Address
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    City
+                    E-mail
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
-                    className="ui three wide column dividing header"
+                    className="ui two wide column dividing header"
                   >
-                    Tickets
-                  </h2>
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2
-                    id="formText"
-                    className="ui one wide column dividing header"
-                  >
-                    €
+                    Telephone
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
@@ -97,59 +71,28 @@ export default class CartItem extends React.Component {
 
                 <div className="row">
                   <h2 id="formText" className="ui two wide column">
-                    {this.props.title}
+                    {this.props.firstName} {this.props.lastName}
                   </h2>
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2 id="formText" className="ui two wide column">
-                    {this.props.venueName}
-                  </h2>
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2 id="formText" className="ui two wide column">
-                    {this.props.city}
-                  </h2>
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2 id="formText" className="ui one wide column">
-                    {this.props.quantity}
+                  <h2 id="formText" className="ui four wide column">
+                    {this.props.number} {this.props.address} {this.props.city}
                   </h2>
 
-                  <h2 id="formText" className="ui two wide column">
-                    <div class="ui icon yellow mini buttons">
-                      <button
-                        className="ui mini button white"
-                        onClick={this.increaseQty.bind(this)}
-                      >
-                        <i className="plus icon green" />
-                      </button>
-                      <button
-                        className="ui mini button"
-                        onClick={this.decreaseQty.bind(this)}
-                      >
-                        <i className="minus icon red" />
-                      </button>
-                    </div>
+                  <h2 id="formText" className="ui three wide column">
+                    {this.props.email}
                   </h2>
 
-                  {/* <h2 id="formText" className="ui one wide column" />*/}
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2 id="formText" className="ui one wide column">
-                    €{this.props.price}
+                  <h2 id="formText" className="ui three wide column">
+                    {this.props.telephone}
                   </h2>
-                  {/*                 <h2 id="formText" className="ui one wide column" />*/}
-                  <h2 id="formText" className="ui one wide column" />
-                  <h2 id="formText" className="ui one wide column">
-                    €{this.props.price * this.props.quantity}
+                  <h2 id="formText" className="ui two wide column">
+                    € 200
                   </h2>
+                  <h2 id="formText" className="ui one wide column" />
                 </div>
 
                 <div className="row">
                   <div id="checkoutEditBtn">
-                    <Button
-                      className="ui red mini button"
-                      onClick={this.getId.bind(this, this.props.id)}
-                    >
-                      Remove &nbsp;
-                      <i className="trash icon" />
-                    </Button>
+                    <Checkout email={this.props.email} amount={20000} />
                     {/*<Button className="ui orange button" type="submit">
                       Edit Ticket Info
                     </Button>*/}
@@ -163,6 +106,40 @@ export default class CartItem extends React.Component {
     );
   }
 }
+
+// id={test._id}
+//           firstName={test.buyer.firstName}
+//           lastName={test.buyer.lastName}
+//           email={test.buyer.email}
+//           telephone={test.buyer.telephone}
+//           number={test.buyer.number}
+//           address={test.buyer.address}
+//           city={test.buyer.city}
+
+// getId(id) {
+//   debugger;
+//   this.props.removeEvent(id);
+// }
+
+// setEvent() {
+//   this.props.updateEvent(this.props.id, this.state.data);
+// }
+
+// increaseQty() {
+//   Cart.update({ event: this.props.id }, { $inc: { quantity: 1 } });
+// }
+
+// decreaseQty() {
+//   if (this.props.quantity > 1)
+//     Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
+// }
+
+// redirect() {
+//   this.props.history.push({
+//     pathname: "/admin/edit/event",
+//     query: { id: this.props.id }
+//   });
+// }
 
 // <Button
 //                   onClick={this.redirect.bind(this)}
