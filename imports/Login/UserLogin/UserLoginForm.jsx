@@ -1,5 +1,5 @@
 import React from "react";
-import { Message } from "semantic-ui-react";
+import { Message, Button } from "semantic-ui-react";
 import { Accounts } from "meteor/accounts-base";
 import { Link } from "react-router-dom";
 // import { Meteor } from "meteor/meteor";
@@ -38,6 +38,7 @@ export default class UserLoginForm extends React.Component {
               <div className="field">
                 <label id="formText">E-mail</label>
                 <input
+                  required
                   ref="email"
                   type="text"
                   name="E-mail"
@@ -47,6 +48,7 @@ export default class UserLoginForm extends React.Component {
               <div className="field">
                 <label id="formText">Password</label>
                 <input
+                  required
                   ref="pass"
                   type="text"
                   name="Password"
@@ -60,10 +62,11 @@ export default class UserLoginForm extends React.Component {
           <div className="four fields">
             <div className="field">
               {/*<div id="regBtn">*/}
-
-              <button class="ui large orange button" type="submit">
-                Login
-              </button>
+              <Link to={"/user/checkout"}>
+                <Button class="ui large orange button" type="submit">
+                  Login
+                </Button>
+              </Link>
 
               {/*</div>*/}
             </div>

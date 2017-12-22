@@ -1,7 +1,8 @@
 import React from "react";
-import { Message } from "semantic-ui-react";
+import { Message, Button } from "semantic-ui-react";
 import { Accounts } from "meteor/accounts-base";
 import { Link } from "react-router-dom";
+import history from "../../History";
 // import { Meteor } from "meteor/meteor";
 
 export default class AdminLoginForm extends React.Component {
@@ -9,7 +10,16 @@ export default class AdminLoginForm extends React.Component {
     e.preventDefault();
     let email = this.refs.email.value.trim();
     let pass = this.refs.pass.value.trim();
-    Meteor.loginWithPassword({ email }, pass);
+    // Meteor.call("eventCreate", eventData, (err, res) => {
+    //   if (!err) history.push("/");
+    // });
+    Meteor.loginWithPassword({ email }, pass, err => {
+      if (!err) {
+        history.push("/admin/area");
+      } else {
+        alert("Invalid LoginCredentials");
+      }
+    });
   }
 
   render() {
@@ -56,9 +66,9 @@ export default class AdminLoginForm extends React.Component {
           <h3 id="formText" className="ui inverted dividing header" />
           <div className="four fields">
             <div className="field">
-              <button class="ui large orange button" type="submit">
+              <Button class="ui large orange button" type="submit">
                 Login
-              </button>
+              </Button>
             </div>
             <div className="field" />
             <div className="field" />

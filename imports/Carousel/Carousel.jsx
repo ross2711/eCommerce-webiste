@@ -28,7 +28,7 @@ export default class PhotoCarousel extends React.Component {
 											{" "}
 											<img
 												id="main-img"
-												height={1300}
+												height={1000}
 												src={photo}
 											/>{" "}
 										</div>

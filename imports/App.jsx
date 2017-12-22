@@ -17,6 +17,8 @@ import Cart from "./Cart/index";
 // import Checkout from "./Checkout/index";
 import CheckoutOption from "./CheckoutOption/index";
 import FastPayCheckout from "./Checkout/index";
+import UserCheckout from "./UserCheckout/index";
+import AdminOrders from "./AdminOrders/index";
 import FinalConfirmation from "./FinalConfirmation/index";
 import Modal from "./AdminArea/EditEventTitleModal";
 import Perf from "react-addons-perf";
@@ -43,6 +45,8 @@ export const routes = () => (
 			{/*<Route path="/checkout" component={Checkout} />*/}
 			<Route path="/checkout/option" component={CheckoutOption} />
 			<Route path="/fastpay" component={FastPayCheckout} />
+			<Route path="/user/checkout" component={UserCheckout} />
+			<Route path="/admin/orders" component={AdminOrders} />
 			<Route path="/confirmation" component={FinalConfirmation} />
 			<Route path="/EditEventTitleModal" component={Modal} />
 		</div>

@@ -1,7 +1,35 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
+import history from "../History";
+import { Cart } from "../api/Cart";
+import { Events } from "../api/events";
 
 export default class Checkout extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			event: "",
+			cart: ""
+		};
+	}
+	handleSuccess() {
+		var cart;
+		Tracker.autorun(() => {
+			cart = Cart.find({}).fetch();
+			debugger;
+		});
+		if (cart) {
+			debugger;
+			Meteor.call("eventTicketDecrease", cart);
+		}
+
+		console.log("local storage cleared!");
+		history.push("/"); // redirect to homepage
+		console.log("history", history);
+		console.log("redirect to home page after purchase!");
+		Cart.remove({});
+	}
+
 	onToken(token) {
 		var that = this;
 		Meteor.call(
@@ -21,7 +49,9 @@ export default class Checkout extends React.Component {
 					debugger;
 					//debugger to check the data
 					if (data.status == "succeeded") {
-						//this.handleSuccess(data);
+						console.log(data);
+						this.handleSuccess(data);
+
 						debugger;
 					} else if (data.type == "StripeInvalidRequestError") {
 						//this.handleError(data);

@@ -14,7 +14,7 @@ var charge = (token, amount, email) => {
 			source: token.id,
 			amount: amount,
 			currency: "eur",
-			receipt_email: "ross@barcelonacodeschool.com"
+			receipt_email: "rossfleming2711@gmail.com"
 		},
 		(error, results) => {
 			debugger;

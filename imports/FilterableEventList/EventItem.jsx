@@ -9,12 +9,11 @@ export default class EventItem extends React.Component {
     this.props.addToCart(this.props.id);
   }
   render() {
-    debugger;
     return (
       <div className="container eventBox">
         <Item.Group divided>
           <Item>
-            <Item.Image height={80} size="medium" src={this.props.image} />
+            <Item.Image size="small" src={this.props.image} />
             <Item.Content>
               <Item.Header as="a">Event: {this.props.title}</Item.Header>
               <Item.Meta>

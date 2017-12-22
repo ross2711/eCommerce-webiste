@@ -123,9 +123,12 @@ export default class NewEventForm extends React.Component {
     e.preventDefault();
     debugger;
     Meteor.call("eventCreate", this.state.event, (err, eventId) => {
+      debugger;
       if (!err) {
+        debugger;
         const createdEvent = { ...this.state.event, _id: eventId };
         console.log("new event was created with _id", createdEvent);
+        debugger;
         Cloudinary.upload(this.state.image, (imageError, uploadedImage) => {
           console.log(
             "image upload for event",
@@ -134,6 +137,7 @@ export default class NewEventForm extends React.Component {
             uploadedImage
           );
           if (!imageError) {
+            debugger;
             Meteor.call("eventUpdate", {
               ...createdEvent,
               image: uploadedImage.url,

@@ -9,12 +9,12 @@ import {
 	Component
 } from "semantic-ui-react";
 
-import Address from "./FastPayCheckoutFormComponents/Address";
-import Buyer from "./FastPayCheckoutFormComponents/Buyer";
-import ContactInfo from "./FastPayCheckoutFormComponents/ContactInfo";
-import Description from "./FastPayCheckoutFormComponents/Description";
-import Terms from "./FastPayCheckoutFormComponents/Terms";
-import SubmitBtn from "./FastPayCheckoutFormComponents/SubmitBtn";
+import Address from "./UserCheckoutFormComponents/Address";
+import Buyer from "./UserCheckoutFormComponents/Buyer";
+import ContactInfo from "./UserCheckoutFormComponents/ContactInfo";
+import Description from "./UserCheckoutFormComponents/Description";
+import Terms from "./UserCheckoutFormComponents/Terms";
+import SubmitBtn from "./UserCheckoutFormComponents/SubmitBtn";
 import { Cart } from "/imports/api/Cart";
 import { Events } from "../api/events";
 import history from "../History";
@@ -99,7 +99,7 @@ export default class CheckoutForm extends React.Component {
 				<Message
 					id="adminRegFormTitle"
 					attached
-					header="Welcome to Ticead Alba Fast Pay Checkout"
+					header="Welcome to Ticead Alba User Checkout"
 					content="To process your payment as soon as possible, please fill in your details below"
 				/>
 

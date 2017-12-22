@@ -1,35 +1,15 @@
 import React from "react";
-// import { Radio } from 'semantic-ui-react'
 import { Button } from "semantic-ui-react";
-import Checkout from "./Checkout";
-import { Session } from "meteor/session";
 import { Router, Route, IndexRoute, browserHistory } from "react-router-dom";
-import { Cart, buildCartItems } from "../api/Cart";
-import { Events } from "../api/events";
+import { Cart } from "../api/Cart";
 
-export default class CartItem extends React.Component {
+export default class AdminOrderItem extends React.Component {
   // var total = this.props.price * this.props.quantity;
   constructor() {
     super();
     this.state = {
-      buyer: null,
-      total: 0
+      // display: "none"
     };
-  }
-
-  componentWillMount() {
-    Tracker.autorun(() => {
-      var events = buildCartItems();
-      if (events.length < 1) {
-        return;
-      }
-      const { total } = buildCartItems();
-
-      console.log("total", total);
-      this.setState({ total });
-    });
-    const buyer = Session.get("buyer");
-    this.setState({ buyer });
   }
 
   render() {
@@ -38,14 +18,8 @@ export default class CartItem extends React.Component {
         <div className="ui internally celled grid" id="bookerContainerInfo">
           <div className="row" id="eventPad">
             <div className="two wide centered column">
-              <img
-                id="imgCheckout"
-                src={
-                  "http://res.cloudinary.com/db8xttzan/image/upload/v1513019646/profile-icon_q3pcew.png"
-                }
-              />
+              <img id="imgCheckout" src={this.props.image} />
             </div>
-
             <div className="fourteen wide column">
               <div className="ui padded grid">
                 {/*<h1 id="checkoutText" className="ui sixteen wide column dividing header">Booker Info</h1>*/}
@@ -54,70 +28,57 @@ export default class CartItem extends React.Component {
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    Full Name
+                    User Id
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    Address
+                    Customer Name
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    E-mail
+                    Customer address
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui two wide column dividing header"
                   >
-                    Telephone
+                    Customer email
+                  </h2>
+                  <h2 id="formText" className="ui one wide column" />
+                  <h2
+                    id="formText"
+                    className="ui two wide column dividing header"
+                  >
+                    Event Name
+                  </h2>
+                  <h2 id="formText" className="ui one wide column" />
+                  <h2
+                    id="formText"
+                    className="ui three wide column dividing header"
+                  >
+                    location
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
                   <h2
                     id="formText"
                     className="ui one wide column dividing header"
                   >
-                    Total
-                  </h2>
-                </div>
-
-                <div className="row">
-                  <h2 id="formText" className="ui two wide column">
-                    {this.state.buyer.firstName} {this.state.buyer.lastName}
-                  </h2>
-                  <h2 id="formText" className="ui four wide column">
-                    {this.state.buyer.number} {this.state.buyer.address}{" "}
-                    {this.state.buyer.city}
-                  </h2>
-
-                  <h2 id="formText" className="ui three wide column">
-                    {this.state.buyer.email}
-                  </h2>
-
-                  <h2 id="formText" className="ui three wide column">
-                    {this.state.buyer.telephone}
-                  </h2>
-                  <h2 id="formText" className="ui two wide column">
-                    € {this.state.total}
+                    Tickets purchased
                   </h2>
                   <h2 id="formText" className="ui one wide column" />
-                </div>
-
-                <div className="row">
-                  <div id="checkoutEditBtn">
-                    <Checkout
-                      email={this.state.buyer.email}
-                      amount={this.state.total * 100}
-                    />
-                    {/*<Button className="ui orange button" type="submit">
-                      Edit Ticket Info
-                    </Button>*/}
-                  </div>
+                  <h2
+                    id="formText"
+                    className="ui one wide column dividing header"
+                  >
+                    Total - Stripe
+                  </h2>
                 </div>
               </div>
             </div>
@@ -128,39 +89,21 @@ export default class CartItem extends React.Component {
   }
 }
 
-// id={test._id}
-//           firstName={test.buyer.firstName}
-//           lastName={test.buyer.lastName}
-//           email={test.buyer.email}
-//           telephone={test.buyer.telephone}
-//           number={test.buyer.number}
-//           address={test.buyer.address}
-//           city={test.buyer.city}
-
-// getId(id) {
-//   debugger;
-//   this.state.buyer.removeEvent(id);
-// }
-
-// setEvent() {
-//   this.props.updateEvent(this.props.id, this.state.data);
-// }
-
-// increaseQty() {
-//   Cart.update({ event: this.props.id }, { $inc: { quantity: 1 } });
-// }
-
-// decreaseQty() {
-//   if (this.props.quantity > 1)
-//     Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
-// }
-
 // redirect() {
 //   this.props.history.push({
 //     pathname: "/admin/edit/event",
 //     query: { id: this.props.id }
 //   });
 // }
+
+// increaseQty() {
+//    Cart.update({ event: this.props.id }, { $inc: { quantity: 1 } });
+//  }
+
+//  decreaseQty() {
+//    if (this.props.quantity > 1)
+//      Cart.update({ event: this.props.id }, { $inc: { quantity: -1 } });
+//  }
 
 // <Button
 //                   onClick={this.redirect.bind(this)}

@@ -6,7 +6,7 @@ import history from "../History";
 // const trigger = <span>{/*    <Icon name="user" /> Hello, Ross*/}</span>;
 const trigger = (
   <span>
-    <Icon name="user" /> Login / Logout
+    <Icon name="user" /> Menu
   </span>
 );
 
@@ -16,10 +16,12 @@ const options = [
     // text: <span>Signed in as <strong>Ross Fleming</strong></span>,
     disabled: true
   },
-  { key: "login", text: "Login" },
+  { key: "cart", text: "Cart" },
+  // { key: "login", text: "Login" },
   { key: "logout", text: "Logout" },
   { key: "register as user", text: "Register as User" },
-  { key: "admin", text: "Admin Area" }
+  { key: "adminLogin", text: "Admin Login" },
+  { key: "adminArea", text: "Admin Area" }
 ];
 
 const DropdownTrigger = props => (
@@ -29,6 +31,11 @@ const DropdownTrigger = props => (
     options={options}
     onChange={function(e, data) {
       console.log("history", history);
+
+      if (e.target.innerText === "Cart") {
+        history.push("/cart");
+        console.log("redirect to Cart");
+      }
 
       if (e.target.innerText === "Login") {
         history.push("/user/login");
@@ -46,68 +53,16 @@ const DropdownTrigger = props => (
         console.log("User reg, redirect to user reg page");
       }
 
-      if (e.target.innerText === "Admin Area") {
+      if (e.target.innerText === "Admin Login") {
         history.push("/admin/login");
         console.log("Admin login, redirect to admin login page");
       }
-
-      // if (e.target.innerText === "Logout") {
-      //   history.push("/user/login");
-      //   console.log("redirect to User Logout");
-      // }
-
-      // if (e.target.innerText === "")
+      if (e.target.innerText === "Admin Area") {
+        history.push("/admin/area");
+        console.log("Admin Area, redirect to admin area");
+      }
     }}
   />
 );
 
 export default DropdownTrigger;
-
-//   { key: "login", text: "Login" },
-//   { key: "logout", text: "Logout" },
-//   { key: "register as user", text: "Register as User" },
-//   { key: "admin", text: "Admin Area" }
-
-// import React from "react";
-// import { Dropdown, Icon } from "semantic-ui-react";
-// import { Link } from "react-router-dom";
-// import history from "../History";
-// // import DropdownTrigger from 'DropdownTrigger'
-
-// const trigger = (
-//   <span>
-//     <Icon name="user" /> Hello
-//   </span>
-// );
-
-// const options = [
-//   {
-//     key: "user",
-//     // text: <span>Signed in as <strong>Ross Fleming</strong></span>,
-//     disabled: true
-//   },
-//   // { key: "integrations", text: "Integrations" },
-//   // { key: "help", text: "Help" },
-//   // { key: "settings", text: "Settings" },
-//   { key: "sign-out", text: "Sign Out" }
-// ];
-
-// const DropdownTrigger = props => (
-//   <Dropdown
-//     trigger={trigger}
-//     className="massive"
-//     options={options}
-//     onChange={function(e, data) {
-//       console.log("history", history);
-//       if (e.target.innerText === "Sign Out") {
-//         Meteor.logout();
-//         history.push("/");
-//         console.log("redirect to home page");
-//         // <Link to={"/"} />;
-//         // <Link to={`/users/${user.id}`} activeClassName="current">{user.name}</Link>
-//       }
-//     }}
-//   />
-// );
-
-// export default DropdownTrigger;

@@ -1,7 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import { check } from "meteor/check";
 import { _ } from "meteor/underscore";
-
 import { Events } from "/imports/api/events";
 // import { CartStorage } from "../../imports/api/cartStorage";
 
@@ -16,8 +15,11 @@ Meteor.methods({
     });
     */
 		// returns a string _id from the db
+		console.log("============== user id", this.userId);
 		check(this.userId, String);
+		debugger;
 		console.log("*****************event data", eventData);
+		debugger;
 		return Events.insert({ ...eventData, admin: this.userId });
 	},
 	eventUpdate(eventData) {
@@ -30,6 +32,17 @@ Meteor.methods({
 				$set: _.omit(eventData, "_id")
 			});
 		}
+	},
+	eventTicketDecrease(cart) {
+		console.log("=========================**************(((())))))", cart);
+		var x;
+		cart.map(event => {
+			console.log("(((((- | - )))))", event);
+			Events.update(
+				{ _id: event.event },
+				{ $inc: { tickets: -event.quantity } }
+			);
+		});
 	}
 });
 
