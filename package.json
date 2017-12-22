@@ -4,6 +4,8 @@
   "scripts": {
     "start": "meteor run"
   },
+
+  //below code added to build Heroku app
   "engines": {
     "node": "4.8.4",
     "npm": "2.15.11"
@@ -12,6 +14,7 @@
     "heroku-prebuild": "cd bundle/programs/server && npm install -q",
     "start": "cd bundle && node main.js"
   },
+  //above code added to build Heroku app
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
