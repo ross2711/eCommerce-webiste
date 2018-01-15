@@ -4,17 +4,6 @@
   "scripts": {
     "start": "meteor run"
   },
-
-  //below code added to build Heroku app
-  "engines": {
-    "node": "4.8.4",
-    "npm": "2.15.11"
-  },
-  "scripts": {
-    "heroku-prebuild": "cd bundle/programs/server && npm install -q",
-    "start": "cd bundle && node main.js"
-  },
-  //above code added to build Heroku app
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "bcrypt": "^1.0.3",
@@ -24,6 +13,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-image-slideshow": "^1.5.4",
+    "react-message": "^1.4.0",
     "react-portal": "^4.0.0",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.2.2",
@@ -37,6 +27,7 @@
     "tween.js": "^16.6.0"
   },
   "devDependencies": {
-    "react-addons-perf": "^15.4.2"
+    "react-addons-perf": "^15.4.2",
+    "react-crouton": "^1.0.0"
   }
 }

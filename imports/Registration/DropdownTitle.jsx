@@ -1,6 +1,5 @@
 import React from "react";
 import { Dropdown } from "semantic-ui-react";
-// import titleOptions from './titleOptions'
 
 const titleOptions = [
 	{ key: "mr", text: "Mr", value: "mr" },
@@ -19,7 +18,3 @@ const DropdownTitle = () => (
 );
 
 export default DropdownTitle;
-
-{
-	/*<Dropdown options={} onChange={props.passTitle} />*/
-}

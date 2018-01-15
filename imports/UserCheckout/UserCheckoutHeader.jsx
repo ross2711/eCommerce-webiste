@@ -21,9 +21,7 @@ export default class UserCheckoutHeader extends React.Component {
 				<div
 					className="four wide center aligned column"
 					id="dropTrigCreateEvent"
-				>
-					{/*				<DropdownTrigger />*/}
-				</div>
+				/>
 			</div>
 		);
 	}

@@ -23,14 +23,6 @@ export default class NavbarShipping extends React.Component {
               <p id="navTextShipping">Shipping</p>
             </div>
           </div>
-
-          {/* <div id="test" className="right huge menu">
-          <a className="item">
-            <div id="registerBtn" className="ui huge button primary">Register</div>
-          </a>
-          <a className="item">
-              <LoginLogout />
-          </a>  */}
         </div>
       </div>
     );

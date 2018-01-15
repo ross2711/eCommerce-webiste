@@ -1,23 +1,21 @@
-import React from 'react'
-import {Accounts} from 'meteor/accounts-base'
+import React from "react";
+import { Accounts } from "meteor/accounts-base";
 
-
-export default class Login extends React.Component{
-	handleSubmit(e){
-		e.preventDefault()
-		let email = this.refs.email.value.trim()
-		let pass  = this.refs.pass.value.trim()
-		Meteor.loginWithPassword({email},pass) 
+export default class Login extends React.Component {
+	handleSubmit(e) {
+		e.preventDefault();
+		let email = this.refs.email.value.trim();
+		let pass = this.refs.pass.value.trim();
+		Meteor.loginWithPassword({ email }, pass);
 	}
 
-
-	render(){
+	render() {
 		return (
-			<form onSubmit ={this.handleSubmit.bind(this)}>
-			<input ref='email'/>
-			<input ref='pass'/>
-			<button>login</button>
-		</form>
-		)
+			<form onSubmit={this.handleSubmit.bind(this)}>
+				<input ref="email" />
+				<input ref="pass" />
+				<button>login</button>
+			</form>
+		);
 	}
 }

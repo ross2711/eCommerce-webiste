@@ -3,16 +3,13 @@ import { Message, Button } from "semantic-ui-react";
 import { Accounts } from "meteor/accounts-base";
 import { Link } from "react-router-dom";
 import history from "../../History";
-// import { Meteor } from "meteor/meteor";
 
 export default class AdminLoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let email = this.refs.email.value.trim();
     let pass = this.refs.pass.value.trim();
-    // Meteor.call("eventCreate", eventData, (err, res) => {
-    //   if (!err) history.push("/");
-    // });
+
     Meteor.loginWithPassword({ email }, pass, err => {
       if (!err) {
         history.push("/admin/area");

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import history from "../History";
 import { Button, Icon, Item, Label } from "semantic-ui-react";
 
 export default class EventItem extends React.Component {
@@ -13,7 +12,7 @@ export default class EventItem extends React.Component {
       <div className="container eventBox">
         <Item.Group divided>
           <Item>
-            <Item.Image size="small" src={this.props.image} />
+            <Item.Image size="medium" src={this.props.image} />
             <Item.Content>
               <Item.Header as="a">Event: {this.props.title}</Item.Header>
               <Item.Meta>
@@ -54,12 +53,11 @@ export default class EventItem extends React.Component {
                     primary
                     floated="right"
                   >
-                    Buy tickets
+                    Buy &nbsp;
+                    <Icon name="cart" />
                     <Icon name="right chevron" />
                   </Button>
                 </Link>
-
-                <Label>Limited Availability</Label>
               </Item.Extra>
             </Item.Content>
           </Item>

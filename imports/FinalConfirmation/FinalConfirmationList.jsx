@@ -22,4 +22,3 @@ export default class FinalConfirmationList extends React.Component {
 	}
 }
 
-// total={ele.total}

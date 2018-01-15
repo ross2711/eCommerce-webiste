@@ -31,7 +31,6 @@ export default class Address extends React.Component {
 						placeholder="Street Address"
 					/>
 				</div>
-
 				<div className="two fields">
 					<div className="field">
 						<label id="formText">City</label>
@@ -43,12 +42,10 @@ export default class Address extends React.Component {
 							placeholder="City"
 						/>
 					</div>
-
 					<div className="field">
 						<label ref="country" id="formText">
 							Country
 						</label>
-						{/*<DropdownCountry />*/}
 					</div>
 				</div>
 			</div>

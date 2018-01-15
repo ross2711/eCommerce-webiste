@@ -3,7 +3,6 @@ import NavbarAdminCreateNewEvent from "./../../Navbar/NavbarAdminCreateNewEvent"
 import NewEventForm from "./NewEventForm";
 import CreateNewEventHeader from "./CreateNewEventHeader";
 import Footer from "./../../Footer/Footer";
-// import EventTitle from "./NewEventFormComponents/EventTitle";
 
 export default class AdminCreateEventPage extends React.Component {
   render() {

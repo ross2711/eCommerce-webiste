@@ -48,7 +48,6 @@ export default class Address extends React.Component {
 						<label ref="country" id="formText">
 							Country
 						</label>
-						{/*<DropdownCountry />*/}
 					</div>
 				</div>
 			</div>

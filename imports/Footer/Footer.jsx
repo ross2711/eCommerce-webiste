@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 export default class Footer extends React.Component {
   render() {
     return (
-      //       <div class="ui grey menu">
-      //   <a class="red item active">Test</a>
-      // </div>
       <div className="ui teal inverted vertical footer segment">
         <div className="ui center aligned container">
           <div className="ui stackable inverted divided grid">

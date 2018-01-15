@@ -19,15 +19,12 @@ import Organiser from "./NewEventFormComponents/Organiser";
 import ContactInfo from "./NewEventFormComponents/ContactInfo";
 import Description from "./NewEventFormComponents/Description";
 import Terms from "./NewEventFormComponents/Terms";
-import SubmitBtn from "./NewEventFormComponents/SubmitBtn";
 import { Events } from "/imports/api/events";
 
 export default class NewEventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // signed_up: false,
-      // signup_error: null,
       event: {
         title: "",
         artist: "",
@@ -52,7 +49,6 @@ export default class NewEventForm extends React.Component {
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.getData = this.getData.bind(this);
   }
 
   setEventData(key, value) {
@@ -95,19 +91,6 @@ export default class NewEventForm extends React.Component {
   passEventImage(image) {
     this.setState({ image });
   }
-
-  // this.props.passData(number, address, city);
-  // createEvent(e) {
-  //   e.preventDefault();
-
-  //   const event = this.state;
-  //   debugger;
-  //   // const event = { title: "first event", on: new Date() };
-  //   Meteor.call("eventCreate", event, (err, eventId) => {
-  //     if (!err) console.log("new event was created with _id", eventId);
-  //     debugger;
-  //   });
-  // }
 
   componentWillMount() {
     var admin = Meteor.userId();
@@ -158,66 +141,50 @@ export default class NewEventForm extends React.Component {
           header="Welcome to Ticead Alba New Event Form"
           content="To get started fill out the details of the event below"
         />
-
         <form className="ui huge form" id="personalInfo">
           <h3 id="formText" className="ui inverted dividing header">
             Event Title
           </h3>
           <EventTitle passEventTitle={this.setEventData.bind(this, "title")} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Event Details
           </h3>
           <EventDetails passEventDetails={this.passEventDetails.bind(this)} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Event Info
           </h3>
           <EventInfo passEventInfo={this.passEventInfo.bind(this)} />
-
           <label id="formText">Venue Name</label>
           <VenueName
             passVenueName={this.setEventData.bind(this, "venueName")}
           />
-
           <h3 id="formText" className="ui inverted dividing header">
             Event Image
           </h3>
           <EventImage passEventImage={this.passEventImage.bind(this)} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Location
           </h3>
           <label id="formText">Address</label>
           <Address passAddressData={this.passAddressData.bind(this)} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Organiser
           </h3>
-
           <Organiser passOrganiser={this.passOrganiser.bind(this)} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Contact Info
           </h3>
           <ContactInfo passContactInfo={this.passContactInfo.bind(this)} />
-
           <h3 id="formText" className="ui inverted dividing header">
             Description of event
           </h3>
           <Description
             passDescription={this.setEventData.bind(this, "description")}
           />
-
           <h3 id="formText" className="ui inverted dividing header" />
-
           <div className="field">
             <div className="field">
               <Terms />
-              {/*             <Link to="/admin/area">
-                <button onClick={this.handleSubmit.bind(this)}>press</button>
-              </Link>*/}
-              {/*<SubmitBtn />*/}
               <Link to={"/admin/area"}>
                 <Button
                   primary
@@ -235,47 +202,3 @@ export default class NewEventForm extends React.Component {
   }
 }
 
-//   e.preventDefault();
-
-//   this.setState({ email, telephone });
-//   this.setState({ firstName, lastName });
-//   this.setState({ number, address, city });
-// // this.props.passData(number, address, city);
-// passAddressData(number, address, city) {
-// passContactInfo(email, telephone) {
-
-// passOrganiser(firstName, lastName) {
-// register(e) {
-// }
-// }
-// }
-// }
-
-// createEvent() {
-//   debugger
-//   Meteor.call("eventCreate", event, (err, eventId) => {
-//     if (!err) console.log("new event was created with _id", eventId);
-//   });
-// }
-
-// // const event = { title: "first event", on: new Date() };
-// componentWillMount() {
-//   var admin = Meteor.userId();
-//   if (admin) {
-//     this.setState({ admin });
-//   }
-// }
-
-// onSubmit={this.handleSubmit.bind(this)}
-
-// Meteor.call("createUserInServer", title, err => {
-//       if (err) {
-//         console.log(err);
-//         // this.setState({ signup_error: err });
-//       } else {
-//         Meteor.loginWithPassword(email, password, () => {
-//           console.log("done");
-//           // this.setState({ signed_up: true });
-//         });
-//       }
-//     });

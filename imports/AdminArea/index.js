@@ -38,7 +38,6 @@ export default class AdminPage extends React.Component {
               <NavbarAdminPage />
             </div>
           </div>
-
           <div className="sixteen wide column" id="newEventPadding">
             <CreateNewEventBtn />
           </div>
@@ -47,7 +46,6 @@ export default class AdminPage extends React.Component {
           <div className="sixteen wide column">
             <CurrentEvents />
           </div>
-
           <div className="sixteen wide column">
             <AdminEventList
               events={this.state.events}
@@ -55,7 +53,6 @@ export default class AdminPage extends React.Component {
               history={this.props.history}
             />
           </div>
-
           <div className="sixteen wide column">
             <Footer />
           </div>

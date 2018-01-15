@@ -4,7 +4,6 @@ import CheckoutForm from "./CheckoutForm";
 import FastPayHeader from "./FastPayHeader";
 import Footer from "./../Footer/Footer";
 import { Cart } from "../api/Cart";
-// import EventTitle from "./CheckoutFormComponents/EventTitle";
 
 export default class FastPayCheckout extends React.Component {
   render() {
@@ -24,20 +23,4 @@ export default class FastPayCheckout extends React.Component {
       </div>
     );
   }
-}
-
-// <div className="sixteen wide column">
-//   <FastPayHeader />
-// </div>
-
-// <div className="sixteen wide column">
-//   <FastPayHeader />
-// </div>
-
-{
-  /*<div className="ui grid centered">
-            <div className="sixteen wide column">
-              <Footer />
-            </div>
-          </div>*/
 }

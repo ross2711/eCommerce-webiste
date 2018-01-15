@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import history from "../History";
-// import LoginLogout from './DropdownNav'
 
 export default class NavbarUserCheckout extends React.Component {
   render() {
@@ -25,14 +24,6 @@ export default class NavbarUserCheckout extends React.Component {
               <p id="navTextRegister">User Checkout</p>
             </div>
           </div>
-
-          {/* <div id="test" className="right huge menu">
-          <a className="item">
-            <div id="registerBtn" className="ui huge button primary">Register</div>
-          </a>
-          <a className="item">
-              <LoginLogout />
-          </a>  */}
         </div>
       </div>
     );

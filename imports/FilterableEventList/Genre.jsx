@@ -82,28 +82,3 @@ export default class Genre extends React.Component {
 		);
 	}
 }
-
-// <div className="ui radio toggle" id="toggleBtn">
-// 				    <Radio toggle />
-// 				    <label>All</label>
-// 			    </div>
-
-// 			  	<div className="ui radio toggle" id="toggleBtn">
-// 				    <Radio toggle />
-// 				    <label>Rock</label>
-// 			    </div>
-
-// 			    <div className="ui radio toggle" id="toggleBtn">
-// 				    <Radio toggle />
-// 				    <label>Pop</label>
-// 			    </div>
-
-// 			    <div className="ui radio toggle" id="toggleBtn">
-// 				    <Radio toggle />
-// 				    <label>Electronic</label>
-// 			    </div>
-
-// 			    <div className="ui radio toggle" id="toggleBtn">
-// 				    <Radio toggle />
-// 				    <label>Classical</label>
-// 			    </div>

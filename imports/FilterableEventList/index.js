@@ -30,8 +30,8 @@ export default class FilterableEventList extends Component {
 		//first check if the event is in the cart
 		var item = Cart.findOne({ event: id });
 		debugger;
-		//if it is only update
-		//else insert
+		//if it is - update
+		//else - insert
 		if (!item) {
 			Cart.insert({ event: id, quantity: 1, buyer: "" }, e => {
 				console.log("****error*****", e);

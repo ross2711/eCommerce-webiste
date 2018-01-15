@@ -43,7 +43,6 @@ export default class Checkout extends React.Component {
 			(err, data) => {
 				if (err) {
 					debugger;
-					//as always place a debugger here so that you can see what the error is
 					this.handleError(err);
 				} else if (data) {
 					debugger;
@@ -51,10 +50,8 @@ export default class Checkout extends React.Component {
 					if (data.status == "succeeded") {
 						console.log(data);
 						this.handleSuccess(data);
-
 						debugger;
 					} else if (data.type == "StripeInvalidRequestError") {
-						//this.handleError(data);
 						debugger;
 					}
 				}

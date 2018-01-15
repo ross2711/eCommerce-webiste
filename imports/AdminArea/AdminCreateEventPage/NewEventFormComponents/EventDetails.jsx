@@ -1,5 +1,4 @@
 import React from "react";
-// import DropdownGenre from "../../DropdownGenre";
 import DropdownType from "../../DropdownType";
 import { Dropdown } from "semantic-ui-react";
 
@@ -11,6 +10,7 @@ export default class EventDetails extends React.Component {
       genre: null
     };
   }
+
   getData(e) {
     var artist = this.refs.artist.value.trim();
     var price = Number(this.refs.price.value.trim());
@@ -47,8 +47,6 @@ export default class EventDetails extends React.Component {
                 this.setState({ genre: value });
               }}
             />
-            {/*<DropdownGenre />*/}
-            {/*passEventDetails={this.passEventDetails.bind(this)}*/}
           </div>
           <div className="field">
             <label id="formText">Event Type</label>

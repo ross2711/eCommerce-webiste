@@ -1,5 +1,4 @@
 import { Meteor } from "meteor/meteor";
-// import { adminAuth } from "../imports/api/adminAuth";
 import { Countries } from "../imports/api/countries";
 import { Events } from "../imports/api/events";
 

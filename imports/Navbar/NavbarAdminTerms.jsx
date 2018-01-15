@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import LoginLogout from './DropdownNav'
 
 export default class NavbarUserRegister extends React.Component {
   render() {
@@ -24,14 +23,6 @@ export default class NavbarUserRegister extends React.Component {
               <p id="navTextRegister">Admin Terms & Conditions</p>
             </div>
           </div>
-
-          {/* <div id="test" className="right huge menu">
-          <a className="item">
-            <div id="registerBtn" className="ui huge button primary">Register</div>
-          </a>
-          <a className="item">
-              <LoginLogout />
-          </a>  */}
         </div>
       </div>
     );

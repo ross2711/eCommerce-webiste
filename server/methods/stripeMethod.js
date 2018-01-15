@@ -21,7 +21,7 @@ var charge = (token, amount, email) => {
 			if (error) {
 				future.return(error);
 			} else if (results) {
-				//here you could run a function for example in case of success
+				//run a function for example in case of success
 				future.return(results);
 			}
 		}

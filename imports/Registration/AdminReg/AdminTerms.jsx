@@ -119,10 +119,6 @@ const AdminReg = () => (
 
       <div className="field">
         <div className="field">
-          {/*          <div className="ui inverted checkbox">
-            <input type="checkbox" id="terms" />
-            <label id="formText" for="terms">I agree to the terms and conditions</label>
-          </div>*/}
           <div id="regBtn">
             <button className="ui large fluid orange button" type="submit">
               Apply for an Admin Account

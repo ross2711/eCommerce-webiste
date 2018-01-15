@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-// import { Router, Route, IndexRoute, browserHistory } from "react-router-dom";
 import { Router, Route, Link } from "react-router-dom";
 import history from "./History";
 import FilterableEventList from "./FilterableEventList/index";
@@ -14,7 +13,6 @@ import AdminCreateEventPage from "./AdminArea/AdminCreateEventPage/index";
 import EditAdminEventPage from "./AdminArea/AdminEditEventPage/index";
 import ShippingForm from "./Shipping/index";
 import Cart from "./Cart/index";
-// import Checkout from "./Checkout/index";
 import CheckoutOption from "./CheckoutOption/index";
 import FastPayCheckout from "./Checkout/index";
 import UserCheckout from "./UserCheckout/index";
@@ -42,7 +40,6 @@ export const routes = () => (
 			<Route path="/admin/edit/event" component={EditAdminEventPage} />
 			<Route path="/shipping" component={ShippingForm} />
 			<Route path="/cart" component={Cart} />
-			{/*<Route path="/checkout" component={Checkout} />*/}
 			<Route path="/checkout/option" component={CheckoutOption} />
 			<Route path="/fastpay" component={FastPayCheckout} />
 			<Route path="/user/checkout" component={UserCheckout} />

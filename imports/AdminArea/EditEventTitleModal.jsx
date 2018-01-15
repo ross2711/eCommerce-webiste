@@ -10,11 +10,6 @@ export default class ModalExampleControlled extends Component {
 
 	handleClose = () => this.setState({ modalOpen: false });
 
-	// getData = e => {
-	// 	debugger;
-	// 	var data = e.target.value;
-	// };
-
 	getData(e) {
 		var title = e.target.value;
 		this.props.passEventTitle(title);
@@ -40,10 +35,6 @@ export default class ModalExampleControlled extends Component {
 							/>
 						</div>
 					</form>
-					{/*					<input
-						onChange={this.getData}
-						placeholder="edit event title here"
-					/>*/}
 					<h3>Please update the Event Title</h3>
 				</Modal.Content>
 				<Modal.Actions>

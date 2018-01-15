@@ -33,14 +33,7 @@ export default class CheckoutForm extends React.Component {
 				city: ""
 			}
 		};
-		// this.handleSubmit = this.handleSubmit.bind(this);
-		// this.getData = this.getData.bind(this);
 	}
-
-	// setEventData(key, value) {
-	// 	const newBuyer = { ...this.state.buyer, [key]: value };
-	// 	this.setState({ buyer: newBuyer });
-	// }
 
 	passBuyer(firstName, lastName) {
 		debugger;
@@ -58,40 +51,11 @@ export default class CheckoutForm extends React.Component {
 		this.setState({ buyer: newBuyer });
 	}
 
-	// this.props.passData(number, address, city);
-	// createEvent(e) {
-	//   e.preventDefault();
-
-	//   const event = this.state;
-	//   debugger;
-	//   // const event = { title: "first event", on: new Date() };
-	//   Meteor.call("eventCreate", event, (err, eventId) => {
-	//     if (!err) console.log("new event was created with _id", eventId);
-	//     debugger;
-	//   });
-	// }
-
 	handleSubmit(event) {
 		event.preventDefault();
-		debugger;
-		// var cart = Cart.find({}).fetch()[0];
-		// debugger;
-		// Cart.update({ _id: cart._id }, { $set: { buyer: this.state.buyer } });
-		// debugger;
 		Session.set("buyer", this.state.buyer);
 		history.push("/confirmation");
 	}
-
-	// handleSubmit(event) {
-	// 	event.preventDefault();
-	// 	debugger;
-	// 	var purchaser = {
-	// 		firstName: this.state.firstName
-	// 	};
-	// 	var cart = Cart.find({}).fetch()[0];
-	// 	debugger;
-	// 	Cart.update({ _id: cart._id }, { $set: { buyer: purchaser } });
-	// }
 
 	render() {
 		return (
@@ -130,22 +94,10 @@ export default class CheckoutForm extends React.Component {
 						passAddressData={this.passAddressData.bind(this)}
 					/>
 
-					{/*<h3 id="formText" className="ui inverted dividing header">
-						Additional details
-					</h3>
-					<Description
-						passDescription={this.setEventData.bind(
-							this,
-							"description"
-						)}
-					/>*/}
-
 					<h3 id="formText" className="ui inverted dividing header" />
 
 					<div className="field">
 						<div className="field">
-							{/*<Terms />*/}
-
 							<Button primary floated="right">
 								Proceed to Payment
 							</Button>
@@ -157,4 +109,4 @@ export default class CheckoutForm extends React.Component {
 	}
 }
 
-// onClick={this.handleSubmit.bind(this)}
+

@@ -12,7 +12,6 @@ export default class CheckoutOption extends React.Component {
             <NavbarCheckoutOption />
           </div>
         </div>
-
         <div className="nine wide column">
           <div>
             <CheckoutOptionForm />
@@ -24,6 +23,4 @@ export default class CheckoutOption extends React.Component {
   }
 }
 
-{
-  /*<div className="ui grid centered" id="userRegForm">*/
-}
+

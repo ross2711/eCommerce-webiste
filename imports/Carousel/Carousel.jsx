@@ -1,19 +1,22 @@
 import React from "react";
 var Carousel = require("nuka-carousel");
-// import { Grid } from 'semantic-ui-react';
 
 export default class PhotoCarousel extends React.Component {
 	render() {
 		var arr = [
 			"http://insynctm.com/wp-content/uploads/2015/11/BUGGEDOut-Weekender-Day-3-Luke-Dyson-Photography-High-Res-112.jpg",
+			"http://res.cloudinary.com/db8xttzan/image/upload/v1513945535/179430-fatherson-gig-at-the-garage_gxapn2.jpg",
 			"http://insynctm.com/wp-content/uploads/2015/11/BUGGEDOut-Weekender-Day-3-Luke-Dyson-Photography-High-Res-112.jpg",
+			"http://res.cloudinary.com/db8xttzan/image/upload/v1513945536/gig1_dmglnz.jpg",
+			"http://res.cloudinary.com/db8xttzan/image/upload/v1513944616/thumb_msxrea.png",
+			"http://res.cloudinary.com/db8xttzan/image/upload/v1513945536/springsteen-glasgow_spk2vr.jpg",
 			"http://res.cloudinary.com/db8xttzan/image/upload/v1512733382/car_epdxzd.jpg",
 			"http://insynctm.com/wp-content/uploads/2015/11/BUGGEDOut-Weekender-Day-3-Luke-Dyson-Photography-High-Res-112.jpg"
 		];
 
 		return (
 			<div id="main-img">
-				<div className="ui centered grid">
+				<div className="ui centered grid" id="carouselHeight">
 					<div className="sixteen wide centered column">
 						<div className="centered row row-carousel">
 							<Carousel
@@ -42,19 +45,3 @@ export default class PhotoCarousel extends React.Component {
 		);
 	}
 }
-
-// import _ from 'lodash'
-// import React from 'react'
-// import { Grid, Image } from 'semantic-ui-react'
-
-// const columns = _.times(16, i => (
-//   <Grid.Column key={i}>
-//     <Image src='/assets/images/wireframe/image.png' />
-//   </Grid.Column>
-// ))
-
-// const GridExampleGrid = () => (
-//   <Grid>{columns}</Grid>
-// )
-
-// export default GridExampleGrid

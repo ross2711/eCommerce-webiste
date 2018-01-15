@@ -3,7 +3,6 @@ import { Dropdown, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import history from "../History";
 
-// const trigger = <span>{/*    <Icon name="user" /> Hello, Ross*/}</span>;
 const trigger = (
   <span>
     <Icon name="user" /> Menu
@@ -13,11 +12,9 @@ const trigger = (
 const options = [
   {
     key: "user",
-    // text: <span>Signed in as <strong>Ross Fleming</strong></span>,
     disabled: true
   },
   { key: "cart", text: "Cart" },
-  // { key: "login", text: "Login" },
   { key: "logout", text: "Logout" },
   { key: "register as user", text: "Register as User" },
   { key: "adminLogin", text: "Admin Login" },

@@ -8,7 +8,6 @@ export default class AdminEventItem extends React.Component {
     super();
     this.state = {
       data: ""
-      // display: "none"
     };
   }
 
@@ -35,9 +34,6 @@ export default class AdminEventItem extends React.Component {
             <Item.Image size="medium" src={this.props.image} />
             <Item.Content>
               <Item.Header as="a">Event: {this.props.title}</Item.Header>
-              {/*              <Item.Meta>
-                <span className="cinema">Artist: {this.props.artist}</span>
-              </Item.Meta>*/}
               <Item.Meta>
                 <span className="cinema">
                   Event info: {this.props.startDate} @ {this.props.startTime}{" "}
